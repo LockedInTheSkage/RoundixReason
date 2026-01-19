@@ -1,0 +1,52 @@
+[project]
+name = "tunix-grpo-training"
+version = "0.1.0"
+description = "GRPO training for multi-domain reasoning using Tunix and Gemma models"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "LockedInTheSkage" }
+]
+dependencies = [
+    # Core ML frameworks
+    "jax>=0.4.30",
+    "flax>=0.12.2",
+    "optax>=0.2.0",
+
+    # Tunix and model utilities
+    "google-tunix>=0.1.0",
+    "qwix>=0.1.0",
+    "orbax-checkpoint>=0.5.0",
+
+    # Data processing
+    "datasets>=4.4.0",
+    "grain>=0.2.0",
+    "transformers>=4.40.0",
+    "huggingface-hub>=0.20.0",
+
+    # Reward function utilities
+    "rapidfuzz>=3.0.0",
+    "textstat>=0.7.0",
+
+    # Experiment tracking
+    "wandb>=0.16.0",
+    "tensorboardx>=2.6.0",
+
+    # Utilities
+    "tqdm>=4.60.0",
+]
+
+[project.optional-dependencies]
+# For running in Kaggle/Colab environments
+notebook = [
+    "ipywidgets>=8.0.0",
+    "jupyter>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/LockedInTheSkage/RoundixReason"
+Dataset = "https://huggingface.co/datasets/LockedInTheSkage/RoundixReason-tagged-reasoning"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
